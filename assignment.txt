@@ -1,0 +1,4 @@
+Assignment
+1.Lab Exercise 1: We work on Form validation for a User Registration. (done)
+2.Lab Exercise 2: Password Confirmation and show Hints. 
+3.Lab Exercise 3: Scrolling Browser Window with events.

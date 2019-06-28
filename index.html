@@ -1,0 +1,121 @@
+<!--
+Assignment
+1.Lab Exercise 1: We work on Form validation for a User Registration. (done)
+2.Lab Exercise 2: Password Confirmation and show Hints. (done)
+3.Lab Exercise 3: Scrolling Browser Window with events. (done)
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div').scroll(function () {
+                $('h3').css('display', 'inline').fadeOut(3000);
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Registration</h1>
+    <form method="GET">
+        Name:<input id="name" name="name" type="text" placeholder="your name"><br>
+        Email:<input id="email" name="email" type="email" placeholder="your email"><br>
+        Address:<input type="text" class="text" name="address" id="address"><br>
+        Password: <input type="password" class="password" name="password"> Hint: More than 5 characters<br>
+        Confirm Password: <input type="password" class="confpass" name="confpass"><br>
+        <input type="button" id="submit" value="submit" name="submit">
+
+
+    </form>
+    <div class="container"
+        style="font-family:Arial, Helvetica, sans-serif; height: 200px; border: 1px solid black; overflow: scroll">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repudiandae, id tempora sapiente excepturi
+        ab asperiores maiores corporis? Necessitatibus voluptate velit placeat magnam earum corporis, in aliquid quos
+        perferendis rerum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nobis illo et quam repellat praesentium
+        suscipit, nam doloribus similique temporibus illum laborum cumque fugiat nemo aliquid vitae aut dolorem
+        perspiciatis.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id quasi pariatur, harum amet veniam cupiditate dicta
+        nobis repellendus laboriosam molestias sint commodi dolorum maiores? Laborum nihil est laudantium ipsam
+        architecto.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum repudiandae necessitatibus, fugiat dolorem
+        rem optio rerum quibusdam illum libero nobis quam fuga error id, dolore sapiente iste asperiores unde.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate perferendis dignissimos unde illo cum
+        doloribus rerum totam officia adipisci dicta. Necessitatibus, rem eligendi minus cumque ducimus reiciendis natus
+        odio molestiae.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repudiandae, id tempora sapiente excepturi
+        ab asperiores maiores corporis? Necessitatibus voluptate velit placeat magnam earum corporis, in aliquid quos
+        perferendis rerum.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nobis illo et quam repellat praesentium
+        suscipit, nam doloribus similique temporibus illum laborum cumque fugiat nemo aliquid vitae aut dolorem
+        perspiciatis.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id quasi pariatur, harum amet veniam cupiditate dicta
+        nobis repellendus laboriosam molestias sint commodi dolorum maiores? Laborum nihil est laudantium ipsam
+        architecto.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nostrum repudiandae necessitatibus, fugiat dolorem
+        rem optio rerum quibusdam illum libero nobis quam fuga error id, dolore sapiente iste asperiores unde.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate perferendis dignissimos unde illo cum
+        doloribus rerum totam officia adipisci dicta. Necessitatibus, rem eligendi minus cumque ducimus reiciendis natus
+        odio molestiae.
+    </div><br>
+    <h3 style="display:none; color:red">Scroll Event Handled</h3>
+    <script>
+        $(document).ready(function () {
+            $("#submit").on("click", function () {
+                valid = true;
+                if ($("#name").val() == '') {
+                    alert("please enter your name");
+                    valid = false;
+                }
+                if ($("#address").val() == '') {
+                    alert("please enter your address");
+                    valid = false;
+                }
+                if ($("#email").val() == '') {
+                    alert("please enter your email");
+                    valid = false;
+                }
+
+                data = $('.password').val();
+                var len = data.length;
+
+                if (len == null) {
+                    alert("Password cannot be blank");
+                    // Prevent form submission
+                    // event.preventDefault();
+                    valid = false;
+                }
+
+                if (len < 5) {
+                    alert("Password cannot be less than 5 characters");
+                    // Prevent form submission
+                    // event.preventDefault();
+                    valid = false;
+                }
+
+                if ($('.password').val() != $('.confpass').val()) {
+                    alert("Password and Confirm Password don't match");
+                    // Prevent form submission
+                    // event.preventDefault();
+                    valid = false;
+                }
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>
